@@ -6,7 +6,7 @@
 /*   By: motaouss <motaouss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/12 11:59:16 by motaouss          #+#    #+#             */
-/*   Updated: 2023/01/16 19:46:41 by motaouss         ###   ########.fr       */
+/*   Updated: 2023/01/16 20:14:01 by motaouss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ char	*check_env_expand(t_msh *msh, char *str)
 	cpy = msh->env;
 	while (cpy->next)
 	{
-		if (!ft_strcmp(str, cpy->name))
+		if (!ft_strncmp(str, cpy->name, ft_strlen(cpy->name)) && !ft_strncmp(str, cpy->name, ft_strlen(str)))
 			return(cpy->value);
 		cpy = cpy->next;
 	}
@@ -71,6 +71,7 @@ char	*fill_no_expand(t_msh *msh, char *word, int i, int j)
 
 	str = NULL;
 	str = (char *)malloc(sizeof(char) + (ft_strlen(msh->line) + 1 - ft_strlen(word)));
+	free(word);
 	x = 0;
 	while (x < i)
 	{

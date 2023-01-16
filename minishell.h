@@ -6,7 +6,7 @@
 /*   By: motaouss <motaouss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/16 20:43:04 by edvicair          #+#    #+#             */
-/*   Updated: 2023/01/14 20:10:43 by motaouss         ###   ########.fr       */
+/*   Updated: 2023/01/16 19:51:01 by motaouss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,7 +85,6 @@ char	**tokenizator(char *str, char c);
 int	split_what(char *str, int i, char quote);
 //void	freezer(t_token *token);
 int	parser(t_msh *msh);
-//int	tokenizator(char *str, t_token *token);
 int	strlen_quote(char *str, int min, int max);
 int	find_quote(char *str, int min , int max);
 int	is_pipe(char *str);
