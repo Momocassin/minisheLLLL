@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   minishell.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: edvicair <edvicair@student.42.fr>          +#+  +:+       +#+        */
+/*   By: motaouss <motaouss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/16 20:43:04 by edvicair          #+#    #+#             */
-/*   Updated: 2023/01/11 13:08:32 by edvicair         ###   ########.fr       */
+/*   Updated: 2023/01/14 20:10:43 by motaouss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,6 +105,12 @@ t_redir	*ft_redir_new(int R, char *word);
 t_type  ft_choose_type(int R);
 char	*ft_substr_redir(char *s);
 int		ft_strlen_redir(char *str);
+char	*add_expand(t_msh *msh);
+char	*fill_no_expand(t_msh *msh, char *word, int i, int j);
+char	*fill_expand(t_msh *msh, int i, int j, char *word);
+char	*check_env_expand(t_msh *msh, char *str);
+int	ft_isalnum(int c);
+
 
 						// EXEC //
 void	one_child(t_msh *msh);

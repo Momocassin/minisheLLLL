@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   child.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: edvicair <edvicair@student.42.fr>          +#+  +:+       +#+        */
+/*   By: motaouss <motaouss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/04 11:10:32 by edvicair          #+#    #+#             */
-/*   Updated: 2023/01/11 16:13:21 by edvicair         ###   ########.fr       */
+/*   Updated: 2023/01/13 18:11:49 by motaouss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ void	one_child(t_msh *msh)
 	msh->token->child = fork();
 	if (msh->token->child == -1)
 	{
-		perror("Can't fork");
+		perror("\x1b[31mCan't fork");
 		exit(0);
 	}
 	if (msh->token->child == 0)

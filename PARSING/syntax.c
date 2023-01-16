@@ -6,7 +6,7 @@
 /*   By: motaouss <motaouss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/30 04:21:36 by motaouss          #+#    #+#             */
-/*   Updated: 2022/12/26 17:21:50 by motaouss         ###   ########.fr       */
+/*   Updated: 2023/01/13 15:39:42 by motaouss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,9 @@ char	*space_chips(char *line)
 
 	i = 0;
 	str = NULL;
+	str = (char *)malloc(sizeof(char) * ft_strlen(line) + 1);
 	if (!(str))
 		return (line);
-	str = (char *)malloc(sizeof(char) * ft_strlen(line));
 	while (line[i])
 	{
 		if	((line[i] >= 9 && line[i] <= 13) && line[i])

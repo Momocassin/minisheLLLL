@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   exec.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: edvicair <edvicair@student.42.fr>          +#+  +:+       +#+        */
+/*   By: motaouss <motaouss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/26 17:46:25 by edvicair          #+#    #+#             */
-/*   Updated: 2023/01/10 20:48:08 by edvicair         ###   ########.fr       */
+/*   Updated: 2023/01/13 18:13:13 by motaouss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,12 +57,12 @@ void	exec(t_msh *msh, char **cmd, char **env)
 	free(path);
 	if (paths == NULL)
 	{
-		write(2, "Can't find command\n", 19);
+		write(2, "\x1b[31mCan't find command\n", 24);
 		free(paths);
 	}
 	else if (execve(paths, cmd, env) == -1)
 	{
-		perror("Can't execve");
+		perror("\x1b[31mCan't execve");
 		free(paths);
 	}
 }

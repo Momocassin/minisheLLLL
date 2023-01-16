@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   exit.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: edvicair <edvicair@student.42.fr>          +#+  +:+       +#+        */
+/*   By: motaouss <motaouss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 19:12:04 by edvicair          #+#    #+#             */
-/*   Updated: 2022/11/26 16:52:50 by edvicair         ###   ########.fr       */
+/*   Updated: 2023/01/16 19:43:49 by motaouss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,5 +50,6 @@ void	ft_exit(t_msh *msh)
 	}
 	ft_free_double(msh->token->cmd);
 	free(msh->line);
+	printf("\x1b[31mEXIT\n");
 	exit(0);
 }

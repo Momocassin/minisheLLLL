@@ -6,7 +6,7 @@
 /*   By: motaouss <motaouss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/30 00:20:01 by motaouss          #+#    #+#             */
-/*   Updated: 2023/01/11 16:39:43 by motaouss         ###   ########.fr       */
+/*   Updated: 2023/01/12 11:17:13 by motaouss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,6 @@ t_type  ft_choose_type(int R)
 t_redir	*ft_redir_new(int R, char *word)
 {
 	t_redir	*lst_redir;
-	char *cpy;
 
 	lst_redir = (t_redir *)malloc(sizeof(t_redir));
 	if (!lst_redir)

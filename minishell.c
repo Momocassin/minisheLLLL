@@ -6,7 +6,7 @@
 /*   By: motaouss <motaouss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/16 20:39:31 by edvicair          #+#    #+#             */
-/*   Updated: 2023/01/11 16:37:40 by motaouss         ###   ########.fr       */
+/*   Updated: 2023/01/16 19:43:39 by motaouss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -114,12 +114,11 @@ int	main(int ac, char **av, char **env)
 	ft_init_struct(&msh, env);
 	while (1)
 	{
-		msh.line = space_chips(readline("minizboub-> "));
+		msh.line = space_chips(readline("\x1b[1m\x1b[35m Minizboub\x1b[36m ❯ "));
 		if (msh.line)
 		{
 			if (parser(&msh))
 			{
-				add_history(msh.line);
 				if (msh.token && !msh.pip)
 					ft_cmd(&msh);
 			}
@@ -128,7 +127,7 @@ int	main(int ac, char **av, char **env)
 		else
 			break;
 	}
-	printf("exit\n");
 	free(msh.line);
+	free(msh.token->redir);
 	return (0);
 }
