@@ -6,7 +6,7 @@
 /*   By: motaouss <motaouss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 17:52:58 by motaouss          #+#    #+#             */
-/*   Updated: 2023/01/09 02:52:34 by motaouss         ###   ########.fr       */
+/*   Updated: 2023/01/20 04:23:34 by motaouss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,6 @@ int	is_pipe(char *str)
 			i = split_what(str, i, str[i]);
 		i++;
 	}
-	//printf("pipe : %d\n", pipe);
 	return (pipe);
 }
 
@@ -37,7 +36,7 @@ int	find_pipe(char *str, int i)
 	{
 		i++;
 	}
-	if (str[i] = '\0')
+	if (str[i] == '\0')
 		return (ft_strlen(str));
 	return (i);
 }
@@ -61,7 +60,7 @@ char	*ft_substr2(const char *s, int min, int max)
 	return (s2);
 }
 
-int		ft_strlen_redir(char *str)
+int	ft_strlen_redir(char *str)
 {
 	int	i;
 	int	j;
@@ -69,10 +68,10 @@ int		ft_strlen_redir(char *str)
 
 	i = 0;
 	j = 0;
-	while(str[i])
+	while (str[i])
 	{
 		k = i;
-		if(str[i] == '\'' || str[i] == '"')
+		if (str[i] == '\'' || str[i] == '"')
 		{
 			i = split_what(str, i, str[i]);
 			j = j + (i - k);

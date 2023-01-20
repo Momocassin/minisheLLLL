@@ -6,7 +6,7 @@
 /*   By: motaouss <motaouss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/16 20:39:31 by edvicair          #+#    #+#             */
-/*   Updated: 2023/01/16 19:43:39 by motaouss         ###   ########.fr       */
+/*   Updated: 2023/01/20 00:35:48 by motaouss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -106,6 +106,7 @@ void	ft_cmd(t_msh *msh)
 	ft_free_token(msh);
 }
 
+
 int	main(int ac, char **av, char **env)
 {
 	t_msh	msh;
@@ -114,7 +115,8 @@ int	main(int ac, char **av, char **env)
 	ft_init_struct(&msh, env);
 	while (1)
 	{
-		msh.line = space_chips(readline("\x1b[1m\x1b[35m Minizboub\x1b[36m ❯ "));
+		sidaction();
+		msh.line = readline("\x1b[1m\x1b[35m Minizboub\x1b[36m ❯ ");
 		if (msh.line)
 		{
 			if (parser(&msh))
@@ -123,11 +125,11 @@ int	main(int ac, char **av, char **env)
 					ft_cmd(&msh);
 			}
 			free(msh.line);
-		}
+		}	
 		else
 			break;
+		
 	}
 	free(msh.line);
-	free(msh.token->redir);
 	return (0);
 }

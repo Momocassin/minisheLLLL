@@ -6,7 +6,7 @@
 /*   By: motaouss <motaouss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 20:16:33 by motaouss          #+#    #+#             */
-/*   Updated: 2023/01/09 01:37:32 by motaouss         ###   ########.fr       */
+/*   Updated: 2023/01/20 04:22:14 by motaouss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	split_what(char *str, int i, char quote)
 		i++;
 		while (str[i] != quote && str[i])
 			i++;
-		return(i);
+		return (i);
 	}
 	else
 	{
@@ -34,7 +34,7 @@ int	split_what(char *str, int i, char quote)
 	}
 }
 
-int		is_quote(char *str)
+int	is_quote(char *str)
 {
 	int	i;
 
@@ -52,7 +52,7 @@ int		is_quote(char *str)
 
 void	freezer(char **str)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (str[i])
@@ -64,7 +64,7 @@ void	freezer(char **str)
 
 int	strlen_quote(char *str, int min, int max)
 {
-	int i;
+	int		i;
 	char	quote;
 
 	i = min;
@@ -84,7 +84,7 @@ int	strlen_quote(char *str, int min, int max)
 	return ((max - min) + 1);
 }
 
-int	find_quote(char *str, int min , int max)
+int	find_quote(char *str, int min, int max)
 {
 	while (min < max)
 	{

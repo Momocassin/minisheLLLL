@@ -6,7 +6,7 @@
 /*   By: motaouss <motaouss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/30 04:21:36 by motaouss          #+#    #+#             */
-/*   Updated: 2023/01/13 15:39:42 by motaouss         ###   ########.fr       */
+/*   Updated: 2023/01/20 04:31:09 by motaouss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 char	*space_chips(char *line)
 {
 	char	*str;
-	int	i;
+	int		i;
 
 	i = 0;
 	str = NULL;
@@ -24,7 +24,7 @@ char	*space_chips(char *line)
 		return (line);
 	while (line[i])
 	{
-		if	((line[i] >= 9 && line[i] <= 13) && line[i])
+		if ((line[i] >= 9 && line[i] <= 13) && line[i])
 			str[i] = ' ';
 		else
 			str[i] = line[i];
@@ -34,7 +34,6 @@ char	*space_chips(char *line)
 	free(line);
 	return (str);
 }
-
 
 int	pipe_error(char *line)
 {
@@ -50,7 +49,8 @@ int	pipe_error(char *line)
 		if (line[i] == '|')
 		{
 			i++;
-			while (((line[i] >= 9 && line[i] <= 13) || line[i] == ' ') && line[i])
+			while (((line[i] >= 9 && line[i] <= 13) || line[i] == ' ')
+				&& line[i])
 				i++;
 			if (line[i] == '|' || line[i] == '\0')
 				return (1);
@@ -63,7 +63,7 @@ int	pipe_error(char *line)
 int	redir_error(char *line)
 {
 	int	i;
-	int j;
+	int	j;
 
 	i = 0;
 	j = 0;
@@ -74,15 +74,18 @@ int	redir_error(char *line)
 		if (line[i] == '>' || line[i] == '<')
 		{
 			j = i;
-			if ((line[i] == '>' && line[i + 1] == '<') || (line[i] == '<' && line[i + 1] == '>') ||
-			(line[i + 1] == '>' && line[i + 2] == '>') || (line[i + 1] == '<' && line[i + 2] == '<'))
+			if ((line[i] == '>' && line[i + 1] == '<') || (line[i] == '<'
+					&& line[i + 1] == '>') || (line[i + 1] == '>'
+					&& line[i + 2] == '>') || (line[i + 1] == '<'
+					&& line[i + 2] == '<'))
 				return (1);
 			while (line[i + 1] == ' ')
 				i++;
-			if (!line[i + 1] || ((line[i + 1] == '>' || line[i + 1] == '<') && i != j) || line[i + 1] == '|')
+			if (!line[i + 1] || ((line[i + 1] == '>' || line[i + 1] == '<')
+					&& i != j) || line[i + 1] == '|')
 				return (1);
 		}
-		if (!line[i]|| ((line[i] == '<' || line[i] == '>') && !line[i + 1]))
+		if (!line[i] || ((line[i] == '<' || line[i] == '>') && !line[i + 1]))
 			return (1);
 		i++;
 	}

@@ -6,7 +6,7 @@
 /*   By: motaouss <motaouss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/16 20:43:04 by edvicair          #+#    #+#             */
-/*   Updated: 2023/01/16 19:51:01 by motaouss         ###   ########.fr       */
+/*   Updated: 2023/01/20 00:26:21 by motaouss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,6 +109,8 @@ char	*fill_no_expand(t_msh *msh, char *word, int i, int j);
 char	*fill_expand(t_msh *msh, int i, int j, char *word);
 char	*check_env_expand(t_msh *msh, char *str);
 int	ft_isalnum(int c);
+void	sidaction(void);
+void	sidametocosita(int signum);
 
 
 						// EXEC //

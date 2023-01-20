@@ -6,7 +6,7 @@
 /*   By: motaouss <motaouss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 17:31:52 by motaouss          #+#    #+#             */
-/*   Updated: 2023/01/17 19:24:45 by motaouss         ###   ########.fr       */
+/*   Updated: 2023/01/20 04:19:36 by motaouss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ static int	token_error(char *line)
 
 int	parser(t_msh *msh)
 {
+	msh->line = space_chips(msh->line);
 	if ((token_error(msh->line)))
 	{
 		printf("\x1b[31mSyntax Error\n");
@@ -42,7 +43,3 @@ int	parser(t_msh *msh)
 		return (1);
 	}
 }
-
-// < ok = No such file or directory
-// multi exit ? fork ?
-// leak ft_redir_new (valgrind --leak-check=full)

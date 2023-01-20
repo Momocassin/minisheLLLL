@@ -6,7 +6,7 @@
 /*   By: motaouss <motaouss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 18:22:18 by motaouss          #+#    #+#             */
-/*   Updated: 2023/01/09 02:06:34 by motaouss         ###   ########.fr       */
+/*   Updated: 2023/01/20 04:24:43 by motaouss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,8 +109,8 @@ static	void	boucle(char *str, char **s, char c)
 
 char	**tokenizator(char *str, char c)
 {
-	char **s;
-	int i;
+	char	**s;
+	int		i;
 
 	if (!str)
 		return (NULL);
@@ -120,6 +120,5 @@ char	**tokenizator(char *str, char c)
 	i = count(str, c);
 	s[i] = NULL;
 	boucle(str, s, c);
-	//printf ("C : %c , nb word : %i\n", c, count(str, c));
 	return (s);
 }
